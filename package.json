@@ -1,0 +1,11 @@
+{
+  "name": "utkarsh",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx http-server -c-1 . -p 5500"
+  },
+  "dependencies": {
+    "three": "latest"
+  },
+  "devDependencies": {}
+}

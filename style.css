@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Host Grotesk";
+    /* theme colors: black / grey / silver */
+    --bg: #070708; /* near black */
+    --bg-2: #141416; /* dark grey */
+    --muted: #9aa0a6; /* muted grey */
+    --silver: #c8c8c8; /* silver accent */
+    background: var(--bg);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+p {
+    color: var(--silver);
+    font-size: 0.9rem;
+    font-weight: 450;
+}
+
+nav, .hero-footer {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.nav-items {
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav .logo p {
+    font-weight: 700;
+    color: var(--silver);
+}
+
+.nav-items p {
+    color: var(--muted);
+    cursor: default;
+}
+
+.hero-footer {
+    bottom: 0;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100svh;
+    overflow: hidden;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+}
+
+.gradient-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* subtle fallback gradient for when WebGL content isn't visible */
+    background: radial-gradient(circle at 20% 20%, rgba(200,200,200,0.03), transparent 10%),
+                linear-gradient(180deg, var(--bg-2), var(--bg));
+}
+
+@media (max-width: 600px){
+    nav{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .hero-logo { width: 45%; }
+}
