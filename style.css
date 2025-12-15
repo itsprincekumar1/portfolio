@@ -10,7 +10,7 @@ body {
     /* theme colors: black / grey / silver */
     --bg: #070708; /* near black */
     --bg-2: #141416; /* dark grey */
-    --muted: #9aa0a6; /* muted grey */
+    --muted: #ffff; /* muted grey */
     --silver: #c8c8c8; /* silver accent */
     background: var(--bg);
 }
@@ -45,6 +45,7 @@ nav, .hero-footer {
 
 nav .logo p {
     font-weight: 700;
+    font-size: 1.2rem;
     color: var(--silver);
 }
 
@@ -72,6 +73,68 @@ section {
     width: 25%;
 }
 
+.hero-title {
+    font-size: 4rem;
+    line-height: 0.95;
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
+    /* gradient text to match the dark theme */
+    background: linear-gradient(90deg, #7BE9F7 0%, #C58CFF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--silver); /* fallback */
+}
+
+/* CTA buttons under the hero title */
+.hero-cta {
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+    transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s, background .28s;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--silver);
+    border: 1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.btn-primary{
+    background: linear-gradient(180deg, rgba(123,233,247,0.12), rgba(197,140,255,0.08));
+    color: #ffffff;
+    border: 1px solid rgba(123,233,247,0.22);
+}
+
+.btn-ghost{
+    background: rgba(255,255,255,0.02);
+    color: var(--silver);
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.btn:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 600px){
+    .hero-cta { flex-direction: column; gap: .6rem; }
+    .btn { font-size: 0.85rem; padding: .55rem .9rem; }
+}
+
 .gradient-canvas {
     position: absolute;
     top: 0;
@@ -89,4 +152,5 @@ section {
         gap: 1.5rem;
     }
     .hero-logo { width: 45%; }
+    .hero-title { font-size: 2.2rem; }
 }
